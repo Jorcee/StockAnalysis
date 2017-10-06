@@ -37,14 +37,15 @@ while(userInput.lower() != 'exit'):
                       "\nWhat would you like to do?\n" +
                       "Add,Remove,See,Exit\n")
     if userInput.lower() == "add":
-        addStock(tickers)
+        tickers =  addStock(tickers)
     elif userInput.lower() == "remove":
-        removeStock(tickers)
+        tickers = removeStock(tickers)
     elif userInput.lower() == 'see':
         seeStock(tickers)
 with open("Stocks.txt",'w') as file:
     for stock in tickers:
         file.write(stock + '\n')
+        
 exit()
 
 

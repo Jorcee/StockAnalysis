@@ -27,7 +27,7 @@ class GraphStock:
             for t in stockTickers:
                 stocks[t] = wb.DataReader(t.upper().strip('\n'), data_source='yahoo', start='1995-1-1')['Adj Close']
         except:
-            graphAllStock(stockTickers)
+            this.graphAllStock(stockTickers)
         (stocks / stocks.iloc[0] * 100).plot(figsize=(8,5))
         plt.title("Normalized Growth Comparison of "+str(stockTickers))
         plt.show()
